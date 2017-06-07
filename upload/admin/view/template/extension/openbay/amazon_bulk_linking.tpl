@@ -30,7 +30,10 @@
       <div class="row">
         <div class="col-sm-12">
           <?php if (in_array($marketplace_code, $marketplaces_processing)) { ?>
-          <div class="pull-right"> <a class="btn btn-primary" disabled="disabled"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading; ?></a> </div>
+          <div class="pull-right">
+            <a class="btn btn-warning" href="<?php echo $cancel_report_link; ?>"><i class="fa fa-times fa-lg"></i> <?php echo $button_cancel; ?></a>
+            <a class="btn btn-primary" disabled="disabled"><i class="fa fa-cog fa-lg fa-spin"></i> <?php echo $text_loading; ?></a>
+          </div>
           <?php } else { ?>
           <div class="pull-right"> <a id="button-load-listings" class="btn btn-primary" href="<?php echo $marketplaces[$marketplace_code]['href_load_listings']; ?>"><?php echo $button_load; ?></a> </div>
           <?php } ?>

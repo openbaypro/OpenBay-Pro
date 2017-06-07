@@ -133,16 +133,16 @@ class ControllerExtensionOpenbayAmazon extends Controller {
 					'date_updated' 	 => (string)$update_node->date_updated,
 					'status' 		 => (string)$update_node->status,
 				);
-				
+
 				$data_items = array();
-				
+
 				foreach($update_node->data->product as $product_node) {
 					$data_items[] = array(
 						'sku' 	=> (string)$product_node->sku,
 						'stock' => (int)$product_node->stock
 					);
 				}
-				
+
 				$row['data'] = $data_items;
 				$table_data[(int)$update_node->ref] = $row;
 			}
@@ -927,6 +927,19 @@ class ControllerExtensionOpenbayAmazon extends Controller {
 		} else {
 			$linked_item_limit = 25;
 		}
+
+        if (isset($this->request->get['cancel_report']) && $this->request->get['cancel_report'] == 1) {
+            $this->load->model('setting/setting');
+
+            $settings = $this->model_setting_setting->getSetting('openbay_amazon');
+            $settings['openbay_amazon_processing_listing_reports'] = '';
+
+            $this->model_setting_setting->editSetting('openbay_amazon', $settings);
+
+            $this->response->redirect($this->url->link('extension/openbay/amazon/bulklinking', 'marketplace=' . $marketplace_code . '&token=' . $this->session->data['token'], true));
+        } else {
+            $data['cancel_report_link'] = $this->url->link('extension/openbay/amazon/bulklinking', 'cancel_report=1&marketplace=uk&token=' . $this->session->data['token'], true);
+        }
 
 		$marketplaces = array(
 			'uk' => array(
