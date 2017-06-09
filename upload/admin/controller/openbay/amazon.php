@@ -987,7 +987,7 @@ class ControllerOpenbayAmazon extends Controller {
 		}
 
 		$data['cancel'] = $this->url->link('openbay/amazon', 'token=' . $this->session->data['token'], 'SSL');
-		$data['link_do_listings'] = $this->url->link('openbay/amazonus/doBulkLinking', 'token=' . $this->session->data['token'], 'SSL');
+		$data['link_do_listings'] = $this->url->link('openbay/amazon/doBulkLinking', 'token=' . $this->session->data['token'], 'SSL');
 		$data['token'] = $this->session->data['token'];
 
 		$data['header'] = $this->load->controller('common/header');
