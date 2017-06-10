@@ -76,7 +76,7 @@
         <div class="well">
           <div class="row">
             <div class="col-sm-12 text-right">
-              <div class="pull-right"> <a id="link-button" class="btn btn-primary" href="<?php echo $button_save; ?>" data-toggle="tooltip" title="<?php echo $button_load ?>"><i class="fa fa-save"></i></a></div>
+              <div class="pull-right"> <a id="link-button" class="btn btn-primary" data-toggle="tooltip" title="<?php echo $button_link; ?>"><i class="fa fa-save"></i></a></div>
             </div>
           </div>
         </div>
