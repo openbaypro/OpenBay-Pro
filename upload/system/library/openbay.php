@@ -237,13 +237,13 @@ final class Openbay {
 	public function newOrderAdminNotify($order_id, $order_status_id) {
 		$this->load->model('checkout/order');
 		$order_info = $this->model_checkout_order->getOrder($order_id);
-		
+
 		if (version_compare(VERSION, '2.2', '>') == true) {
 			$language_code = $order_info['language_code'];
 		} else {
 			$language_code = $order_info['language_directory'];
 		}
-		
+
 		$language = new Language($language_code);
 		$language->load($language_code);
 		$language->load('mail/order');
@@ -318,7 +318,7 @@ final class Openbay {
 		$mail->send();
 
 		// Send to additional alert emails
-		$emails = explode(',', $this->config->get('config_alert_emails'));
+		$emails = explode(',', $this->config->get('config_mail_alert_email'));
 
 		foreach ($emails as $email) {
 			if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
