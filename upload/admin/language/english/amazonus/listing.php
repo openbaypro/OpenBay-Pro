@@ -86,7 +86,7 @@ $_['quick_listing_tab_text'] = 'Quick listing';
 $_['advanced_listing_tab_text'] = 'Advanced listing';
 $_['saved_tab_text'] = 'Saved listings';
 
-$_['text_error_connecting'] = 'Warning: There was problem connecting to Welford Media API servers. Please check your OpenBay Pro Amazon US extension settings. If the problem persists, please contact Welford support.';
+$_['text_error_connecting'] = 'Warning: There was problem connecting to the API servers. Please check your OpenBay Pro Amazon US extension settings. If the problem persists, please contact Welford support.';
 
 /* Quick/advanced listing tabs */
 $_['quick_listing_description'] = 'Use this method when matching product already exist in Amazon US catalogue. Matching is found by Amazon US using Standard product id (ASIN, ISBN, UPS, EAN)';

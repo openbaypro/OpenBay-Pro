@@ -14,7 +14,7 @@ $_['quick_listing_tab_text'] = 'Quick listing';
 $_['advanced_listing_tab_text'] = 'Advanced listing';
 $_['saved_tab_text'] = 'Saved listings';
 
-$_['text_error_connecting'] = 'Warning: There was problem connecting to Welford Media API servers. Please check your OpenBay Pro Amazon US extension settings. If the problem persists, please contact Welford support.';
+$_['text_error_connecting'] = 'Warning: There was problem connecting to the API servers. Please check your OpenBay Pro Amazon US extension settings. If the problem persists, please contact Welford support.';
 
 /* Quick/advanced listing tabs */
 $_['quick_listing_description'] = 'Use this method when matching product already exist in Amazon catalogue. Matching is found by Amazon using Standard product id (ASIN, ISBN, UPS, EAN)';
@@ -37,13 +37,13 @@ $_['category_selector_field_text'] = 'Amazon category:';
 
 /* Item links tab */
 $_['item_links_description'] = 'Here you can add and edit product links to already existing Amazon items without listing them from OpenCart. This will allow stock control between enabled marketplaces. If you have openStock installed - this will also allow you to link item options to individual Amazon SKUs. (Uploading products from OpenCart to Amazon will automaticaly add links)';
-$_['new_link_table_name'] = 'New link'; 
+$_['new_link_table_name'] = 'New link';
 $_['new_link_product_column'] = 'Product';
 $_['new_link_sku_column'] = 'SKU';
 $_['new_link_amazonus_sku_column'] = 'Amazon item SKU';
 $_['new_link_action_column'] = 'Action';
 
-$_['item_links_table_name'] = 'Item links'; 
+$_['item_links_table_name'] = 'Item links';
 
 
 /* Marketplaces */

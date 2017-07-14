@@ -57,7 +57,7 @@
                     <h3><?php echo $lang_pod_manage; ?></h3>
                 </div>
 
-                <a href="http://help.welfordmedia.co.uk/" target="_BLANK">
+                <a href="https://help.openbaypro.com/" target="_BLANK">
                     <div class="openbayPod overviewPod">
                         <img src="<?php echo HTTPS_SERVER . 'view/image/openbay/openbay_icon7.png'; ?>" title="<?php echo $lang_title_help; ?>" alt="Help icon" border="0" />
                         <h3><?php echo $lang_pod_help; ?></h3>

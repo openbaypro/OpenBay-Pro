@@ -1,7 +1,7 @@
 <?php
-// Heading 
-$_['lang_heading_title']        = 'OpenBay Pro'; 
-$_['lang_text_manager']         = 'OpenBay Pro manager'; 
+// Heading
+$_['lang_heading_title']        = 'OpenBay Pro';
+$_['lang_text_manager']         = 'OpenBay Pro manager';
 
 // Text
 $_['text_install']              = 'Install';
@@ -50,7 +50,7 @@ $_['lang_patch_notes3']                 = 'To update your module you must upload
 //Help tab
 $_['lang_help_title']                   = 'Information on help & support';
 $_['lang_help_support_title']           = 'Support';
-$_['lang_help_support_description']     = 'You should read our FAQ section to see if your question is already answered <a href="http://shop.openbaypro.com/index.php?route=information/faq" title="OpenBay Pro for OpenCart support FAQ">here</a>. <br />If you cannot find an answer then you can create a support ticket, <a href="http://support.welfordmedia.co.uk" title="OpenBay Pro for OpenCart support site">click here</a>';
+$_['lang_help_support_description']     = 'You should read our FAQ section to see if your question is already answered <a href="http://shop.openbaypro.com/index.php?route=information/faq" title="OpenBay Pro for OpenCart support FAQ">here</a>. <br />If you cannot find an answer then you can create a support ticket, <a href="https://help.openbaypro.com/" title="OpenBay Pro for OpenCart support site">click here</a>';
 $_['lang_help_template_title']          = 'Creating eBay templates';
 $_['lang_help_template_description']    = 'Information for developers &amp; designers on creating custom templates for their eBay listings, <a href="http://shop.openbaypro.com/index.php?route=information/faq&topic=30" title="OpenBay Pro HTML templates for eBay">click here</a>';
 

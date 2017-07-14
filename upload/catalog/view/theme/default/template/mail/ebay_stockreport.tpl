@@ -11,10 +11,7 @@
             <img src="https://uk.openbaypro.com/account/live/images/obp.png">
         </div>
         <div style="width:49%; float:right;">
-            <h3 style="margin-top:20px;margin:0px; padding:0px;text-align:right;font-size:18px;"><a href="http://support.welfordmedia.co.uk/" style="text-decoration:none; color:#c91920;"><?php echo $help; ?></a></h3>
-
-            <a href="http://www.facebook.com/welfordmedia" title="WM Facebook"><img height="32" style="margin-right:10px; margin-top: 24px; float: right;" src="https://uk.openbaypro.com/account/live/images/facebook.png" border="0"></a>
-            <a href="http://twitter.com/welfordmedia" title="WM Twitter"><img height="32" style="margin-right:10px; margin-top: 24px; float: right;" src="https://uk.openbaypro.com/account/live/images/twitter.png" border="0"></a>
+            <h3 style="margin-top:20px;margin:0px; padding:0px;text-align:right;font-size:18px;"><a href="https://help.openbaypro.com/" style="text-decoration:none; color:#c91920;"><?php echo $help; ?></a></h3>
         </div>
     </div>
 
@@ -80,18 +77,6 @@
             </tbody>
         </table>
         <?php } ?>
-    </div>
-    <div style="border-bottom: 2px solid #343C53;margin-top: 10px;">
-        <div style="width:49%; float:left;">
-            <img height="40" style="margin-top: 20px; float: left;" src="https://uk.openbaypro.com/account/live/images/wm80.png">
-            <p style="line-height: 60px; float: left;">Handmade by <a target="_BLANK" href="http://www.welfordmedia.co.uk" style="color:#c91920;">Welford Media Limited</a></p>
-        </div>
-        <div style="width:49%; float:right;">
-
-            <a href="http://www.facebook.com/welfordmedia" title="WM Facebook"><img height="32" style="margin-right:10px; margin-top: 24px; float: right;" src="https://uk.openbaypro.com/account/live/images/facebook.png" border="0"></a>
-            <a href="http://twitter.com/welfordmedia" title="WM Twitter"><img height="32" style="margin-right:10px; margin-top: 24px; float: right;" src="https://uk.openbaypro.com/account/live/images/twitter.png" border="0"></a>
-
-        </div>
     </div>
 </div>
 </body>
