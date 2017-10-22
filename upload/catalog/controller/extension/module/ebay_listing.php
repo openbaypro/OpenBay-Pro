@@ -1,9 +1,8 @@
 <?php
 class ControllerExtensionModuleEbayListing extends Controller {
 	public function index() {
-		if ($this->config->get('module_ebay_listing_status') == 1) {
-			$this->load->language('extension/module/ebay_listing');
-
+		if ($this->config->get('module_ebay_status') == 1) {
+			$this->load->language('extension/module/ebay');
 			$this->load->model('tool/image');
 			$this->load->model('extension/openbay/ebay_product');
 
@@ -34,18 +33,10 @@ class ControllerExtensionModuleEbayListing extends Controller {
 
 			foreach($product_data['products'] as $product) {
 				if (isset($product['pictures'][0])) {
-				    // download the image from ebay
-                    if (!file_exists(DIR_IMAGE . 'catalog/module_ebay_listing/' . md5($product['pictures'][0]) . '.jpg')) {
-                        @copy($product['pictures'][0], DIR_IMAGE . 'catalog/module_ebay_listing/' . md5($product['pictures'][0]) . '.jpg');
-                    }
-
-                    if (file_exists(DIR_IMAGE . 'catalog/module_ebay_listing/' . md5($product['pictures'][0]) . '.jpg')) {
-					    $image = $this->model_tool_image->resize('catalog/module_ebay_listing/' . md5($product['pictures'][0]) . '.jpg', $this->config->get('module_ebay_listing_width'), $this->config->get('module_ebay_listing_height'));
-                    } else {
-                        $image = $placeholder_image;
-                    }
-                }
-
+					$image = $this->model_extension_openbay_ebay_product->resize($product['pictures'][0], $this->config->get('module_ebay_listing_width'), $this->config->get('module_ebay_listing_height'));
+				} else {
+					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('module_ebay_listing_width'), $this->config->get('module_ebay_listing_height'));
+				}
 				$data['products'][] = array(
 					'thumb' => $image,
 					'name'  => base64_decode($product['Title']),
