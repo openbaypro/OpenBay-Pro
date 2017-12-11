@@ -1,5 +1,6 @@
 <?php
 namespace openbay;
+        ini_set('memory_limit', '512M');
 
 final class Etsy {
 	private $token;
@@ -25,7 +26,7 @@ final class Etsy {
 	public function __get($name) {
 		return $this->registry->get($name);
 	}
-	
+
 	public function resetConfig($token, $enc1, $enc2) {
 		$this->token = $token;
 		$this->enc1 = $enc1;
@@ -48,7 +49,7 @@ final class Etsy {
 				CURLOPT_FRESH_CONNECT   => 1,
 				CURLOPT_RETURNTRANSFER  => 1,
 				CURLOPT_FORBID_REUSE    => 1,
-				CURLOPT_TIMEOUT         => 10,
+				CURLOPT_TIMEOUT         => 180,
 				CURLOPT_SSL_VERIFYPEER  => 0,
 				CURLOPT_SSL_VERIFYHOST  => 0,
 				//CURLOPT_VERBOSE 		=> true,
@@ -227,10 +228,10 @@ final class Etsy {
 
 	public function updateListingStock($etsy_item_id, $new_stock, $status) {
 		$this->log("updateListingStock() - ItemID: " . $etsy_item_id . ", new stock: " . $new_stock . ", status: " . $status);
-		
+
 		if ($new_stock > 0) {
 			$this->log("updateListingStock() - stock > 0 - update stock");
-			
+
 			if ($status == 'edit') {
 				$status = 'inactive';
 			}
@@ -244,18 +245,18 @@ final class Etsy {
 			}
 		} else {
 			$this->log("updateListingStock() - stock > 0 - set to inactive");
-			
+
 			$this->deleteLink(null, $etsy_item_id);
 
 			$response = $this->call('v1/etsy/product/listing/' . (int)$etsy_item_id . '/inactive/', 'POST');
 
 			if (isset($response['data']['error'])) {
 				$this->log("updateListingStock() - Error: " . json_encode($response));
-				
+
 				return $response;
 			} else {
 				$this->log("updateListingStock() - Item ended OK");
-				
+
 				return true;
 			}
 		}
