@@ -146,6 +146,12 @@ class ControllerExtensionOpenbayEbay extends Controller {
 		$this->response->addHeader('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 		$this->response->addHeader('Content-type: application/json; charset=utf-8');
 
+		// Check the module has been installed.
+        if (!in_array("ebay", $this->openbay->installed_markets)) {
+            $this->response->setOutput(json_encode(array('msg' => 'fail', 'reason' => 'Module needs to be installed before auto configuration will work.')));
+            exit();
+        }
+
 		if(
 			(isset($settings['ebay_token']) && !empty($settings['ebay_token'])) ||
 			(isset($settings['ebay_secret']) && !empty($settings['ebay_secret'])) ||
@@ -163,7 +169,7 @@ class ControllerExtensionOpenbayEbay extends Controller {
 			$settings['ebay_encryption_key'] = $this->request->post['encryption_key'];
 			$settings['ebay_encryption_iv'] = $this->request->post['encryption_iv'];
 
-			$this->openbay->ebay->editSetting('ebay', $settings);
+			$this->openbay->editSetting('ebay', $settings);
 
 			$this->response->setOutput(json_encode(array('msg' => 'ok', 'reason' => 'Auto setup has completed','version' => (int)$this->config->get('feed_openbaypro_version'))));
 		}
